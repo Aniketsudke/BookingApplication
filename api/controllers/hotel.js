@@ -62,21 +62,21 @@ export const countByCity = async (req, res, next) => {
     next(err);
   }
 };
-// export const countByType = async (req, res, next) => {
-//   console.log("Hello World");
-//   try {
-//     const hotelCount = await Hotels.countDocuments({ type: "Hotel" });
-//     const apartmentCount = await Hotels.countDocuments({ type: "Apartment" });
-//     const resortCount = await Hotels.countDocuments({ type: "Resort" });
-//     const villaCount = await Hotels.countDocuments({ type: "Villa" });
+export const countByType = async (req, res, next) => {
+  console.log("Hello World");
+  try {
+    const hotelCount = await Hotels.countDocuments({ type: "Hotel" });
+    const apartmentCount = await Hotels.countDocuments({ type: "Apartment" });
+    const resortCount = await Hotels.countDocuments({ type: "Resort" });
+    const villaCount = await Hotels.countDocuments({ type: "Villa" });
 
-//     res.status(200).json([
-//       { type: "Hotel", count: hotelCount },
-//       { type: "Apartment", count: apartmentCount },
-//       { type: "Resort", count: resortCount },
-//       { type: "Villa", count: villaCount },
-//     ]);
-//   } catch (err) {
-//     next(err);
-//   }
-// };
+    res.status(200).json([
+      { type: "Hotel", count: hotelCount },
+      { type: "Apartment", count: apartmentCount },
+      { type: "Resort", count: resortCount },
+      { type: "Villa", count: villaCount },
+    ]);
+  } catch (err) {
+    next(err);
+  }
+};
